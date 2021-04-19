@@ -84,8 +84,6 @@ class SudokuBoard(object):
 
     def insert(self, row, column, condition):
         """ return true if the best number is inserted, false otherwise"""
-        if condition == 9:
-            return False
         for i in range(condition+1, 10):
             self.counter += 1
             if self.is_valid(row, column, i):
@@ -118,6 +116,7 @@ board_start = [
     [0, 0, 0, 4, 1, 9, 0, 0, 5],
     [0, 0, 0, 0, 8, 0, 0, 7, 9]
 ]
+
 
 puzzle = SudokuBoard(board_start)
 puzzle.print_board()
